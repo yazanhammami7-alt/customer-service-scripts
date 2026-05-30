@@ -55,15 +55,14 @@ header p {
 }
 
 .step-number {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #667eea;
     color: white;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 15px;
@@ -109,10 +108,21 @@ header p {
 
 .script-text {
     color: #333;
-    font-style: italic;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     font-size: 0.95em;
+    font-family: inherit;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+.script-text:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
 }
 
 .copy-btn {
@@ -141,6 +151,44 @@ header p {
     background: #28a745;
 }
 
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.save-btn, .reset-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn {
+    background: #28a745;
+    color: white;
+}
+
+.save-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.reset-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.reset-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
 footer {
     text-align: center;
     color: white;
@@ -155,5 +203,13 @@ footer {
 
     .steps {
         grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .save-btn, .reset-btn {
+        width: 100%;
     }
 }

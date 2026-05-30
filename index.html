@@ -14,90 +14,112 @@
         </header>
 
         <div class="steps">
+            <!-- Step 1: Greeting -->
             <div class="step-card">
-                <div class="step-number">Step 1</div>
+                <div class="step-number">1</div>
                 <h2>Greeting</h2>
                 <div class="rules">
                     <strong>Rules:</strong>
                     <ul>
                         <li>Be professional and polite</li>
                         <li>Respond within first 30 seconds</li>
-                        <li>Always include company name</li>
                     </ul>
                 </div>
                 <div class="script-box">
-                    <p class="script-text">"Hello! Thank you for contacting us. My name is [Your Name]. How can I assist you today?"</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy Script</button>
+                    <textarea class="script-text" placeholder="Enter your greeting script here...">Hello! Thank you for contacting us. How can I assist you today?</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
                 </div>
             </div>
 
+            <!-- Step 2: Assurance -->
             <div class="step-card">
-                <div class="step-number">Step 2</div>
-                <h2>Verify Customer</h2>
+                <div class="step-number">2</div>
+                <h2>Assurance</h2>
                 <div class="rules">
                     <strong>Rules:</strong>
                     <ul>
-                        <li>Always verify before accessing account</li>
-                        <li>Request account number or email</li>
-                        <li>Confirm security questions if needed</li>
+                        <li>Show empathy and understanding</li>
+                        <li>Reassure the customer</li>
                     </ul>
                 </div>
                 <div class="script-box">
-                    <p class="script-text">"To better assist you, could you please provide me with your account number or email address associated with your account?"</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy Script</button>
+                    <textarea class="script-text" placeholder="Enter your assurance script here...">I understand your concern. Don't worry, I'm here to help you resolve this issue.</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
                 </div>
             </div>
 
+            <!-- Step 3: Apology -->
             <div class="step-card">
-                <div class="step-number">Step 3</div>
+                <div class="step-number">3</div>
+                <h2>Apology</h2>
+                <div class="rules">
+                    <strong>Rules:</strong>
+                    <ul>
+                        <li>Be sincere and genuine</li>
+                        <li>Take responsibility</li>
+                    </ul>
+                </div>
+                <div class="script-box">
+                    <textarea class="script-text" placeholder="Enter your apology script here...">I sincerely apologize for the inconvenience this has caused you.</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Listen & Understand -->
+            <div class="step-card">
+                <div class="step-number">4</div>
                 <h2>Listen & Understand</h2>
                 <div class="rules">
                     <strong>Rules:</strong>
                     <ul>
                         <li>Do NOT interrupt the customer</li>
                         <li>Take notes of the issue</li>
-                        <li>Confirm you understand the problem</li>
                     </ul>
                 </div>
                 <div class="script-box">
-                    <p class="script-text">"I understand. Let me make sure I have this right: [Summarize the issue]. Is that correct?"</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy Script</button>
+                    <textarea class="script-text" placeholder="Enter your listening script here...">Let me make sure I understand: [Summarize the issue]. Is that correct?</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
                 </div>
             </div>
 
+            <!-- Step 5: Provide Solution -->
             <div class="step-card">
-                <div class="step-number">Step 4</div>
+                <div class="step-number">5</div>
                 <h2>Provide Solution</h2>
                 <div class="rules">
                     <strong>Rules:</strong>
                     <ul>
                         <li>Provide clear, step-by-step solutions</li>
                         <li>Do NOT promise what you can't deliver</li>
-                        <li>Escalate if needed</li>
                     </ul>
                 </div>
                 <div class="script-box">
-                    <p class="script-text">"Here's what I can do to help: [Provide solution]. Would this work for you?"</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy Script</button>
+                    <textarea class="script-text" placeholder="Enter your solution script here...">Here's what I can do to help: [Provide solution]. Would this work for you?</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
                 </div>
             </div>
 
+            <!-- Step 6: Closing -->
             <div class="step-card">
-                <div class="step-number">Step 5</div>
+                <div class="step-number">6</div>
                 <h2>Closing</h2>
                 <div class="rules">
                     <strong>Rules:</strong>
                     <ul>
                         <li>Always thank the customer</li>
                         <li>Confirm next steps</li>
-                        <li>Offer further assistance</li>
                     </ul>
                 </div>
                 <div class="script-box">
-                    <p class="script-text">"Thank you so much for contacting us. Is there anything else I can help you with today?"</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy Script</button>
+                    <textarea class="script-text" placeholder="Enter your closing script here...">Thank you for contacting us. Is there anything else I can help you with?</textarea>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
                 </div>
             </div>
+        </div>
+
+        <div class="button-container">
+            <button class="save-btn" onclick="saveAllScripts()">💾 Save All Scripts</button>
+            <button class="reset-btn" onclick="resetAllScripts()">🔄 Reset</button>
         </div>
 
         <footer>

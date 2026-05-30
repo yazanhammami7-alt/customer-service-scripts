@@ -3,128 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Service Scripts</title>
+    <title>Scripts Library - Copy & Paste</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>📞 Customer Service Scripts</h1>
-            <p>Click on any script to copy it to your clipboard</p>
+        <header class="header">
+            <h1>📋 Scripts Library</h1>
+            <p>Click on any script card to copy it instantly</p>
         </header>
 
-        <div class="steps">
-            <!-- Step 1: Greeting -->
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h2>Greeting</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Be professional and polite</li>
-                        <li>Respond within first 30 seconds</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your greeting script here...">Hello! Thank you for contacting us. How can I assist you today?</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
-
-            <!-- Step 2: Assurance -->
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h2>Assurance</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Show empathy and understanding</li>
-                        <li>Reassure the customer</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your assurance script here...">I understand your concern. Don't worry, I'm here to help you resolve this issue.</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
-
-            <!-- Step 3: Apology -->
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h2>Apology</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Be sincere and genuine</li>
-                        <li>Take responsibility</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your apology script here...">I sincerely apologize for the inconvenience this has caused you.</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
-
-            <!-- Step 4: Listen & Understand -->
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <h2>Listen & Understand</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Do NOT interrupt the customer</li>
-                        <li>Take notes of the issue</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your listening script here...">Let me make sure I understand: [Summarize the issue]. Is that correct?</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
-
-            <!-- Step 5: Provide Solution -->
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <h2>Provide Solution</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Provide clear, step-by-step solutions</li>
-                        <li>Do NOT promise what you can't deliver</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your solution script here...">Here's what I can do to help: [Provide solution]. Would this work for you?</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
-
-            <!-- Step 6: Closing -->
-            <div class="step-card">
-                <div class="step-number">6</div>
-                <h2>Closing</h2>
-                <div class="rules">
-                    <strong>Rules:</strong>
-                    <ul>
-                        <li>Always thank the customer</li>
-                        <li>Confirm next steps</li>
-                    </ul>
-                </div>
-                <div class="script-box">
-                    <textarea class="script-text" placeholder="Enter your closing script here...">Thank you for contacting us. Is there anything else I can help you with?</textarea>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">📋 Copy</button>
-                </div>
-            </div>
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-box" 
+                placeholder="Search scripts..."
+                onkeyup="filterScripts()"
+            >
         </div>
 
-        <div class="button-container">
-            <button class="save-btn" onclick="saveAllScripts()">💾 Save All Scripts</button>
-            <button class="reset-btn" onclick="resetAllScripts()">🔄 Reset</button>
+        <div class="scripts-grid" id="scriptsGrid">
+            <!-- Script cards will be generated here -->
         </div>
 
-        <footer>
-            <p>✅ All scripts follow customer service best practices</p>
-        </footer>
+        <div class="toast" id="toast"></div>
     </div>
 
     <script src="script.js"></script>

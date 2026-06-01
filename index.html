@@ -3,110 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripts Library - Professional</title>
+    <title>Scripts Library</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="main-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fas fa-book"></i>
-                    <span>Scripts Pro</span>
-                </div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📋 Scripts Library</h1>
+            <div class="search-box-wrapper">
+                <i class="fas fa-search"></i>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-box" 
+                    placeholder="Search scripts..."
+                    onkeyup="filterScripts()"
+                >
             </div>
+        </header>
 
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <h3 class="nav-title">Categories</h3>
-                    <button class="nav-btn active" onclick="filterByCategory('all')">
-                        <i class="fas fa-th"></i> All Scripts
-                    </button>
-                    <button class="nav-btn" onclick="filterByCategory('customer-service')">
-                        <i class="fas fa-headset"></i> Customer Service
-                    </button>
-                    <button class="nav-btn" onclick="filterByCategory('sales')">
-                        <i class="fas fa-chart-line"></i> Sales
-                    </button>
-                    <button class="nav-btn" onclick="filterByCategory('support')">
-                        <i class="fas fa-life-ring"></i> Support
-                    </button>
-                </div>
-
-                <div class="nav-section">
-                    <h3 class="nav-title">Tools</h3>
-                    <button class="nav-btn" onclick="toggleFavorites()">
-                        <i class="fas fa-star"></i> Favorites
-                    </button>
-                    <button class="nav-btn" onclick="exportScripts()">
-                        <i class="fas fa-download"></i> Export
-                    </button>
-                </div>
-            </nav>
-
-            <div class="sidebar-footer">
-                <button class="btn-primary" onclick="addNewScript()">
-                    <i class="fas fa-plus"></i> New Script
-                </button>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Header -->
-            <header class="top-header">
-                <div class="header-left">
-                    <h1>Scripts Library</h1>
-                    <p class="header-subtitle">Manage and organize your scripts</p>
-                </div>
-                <div class="header-right">
-                    <div class="search-box-wrapper">
-                        <i class="fas fa-search"></i>
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-box" 
-                            placeholder="Search scripts..."
-                            onkeyup="filterScripts()"
-                        >
-                    </div>
-                </div>
-            </header>
-
-            <!-- Stats -->
-            <div class="stats-section">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-book-open"></i></div>
-                    <div class="stat-content">
-                        <span class="stat-label">Total Scripts</span>
-                        <span class="stat-value" id="totalScripts">0</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-star"></i></div>
-                    <div class="stat-content">
-                        <span class="stat-label">Favorites</span>
-                        <span class="stat-value" id="favoritesCount">0</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-copy"></i></div>
-                    <div class="stat-content">
-                        <span class="stat-label">Copied Today</span>
-                        <span class="stat-value" id="copiedCount">0</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scripts Grid -->
-            <div class="scripts-container">
-                <div class="scripts-grid" id="scriptsGrid">
-                    <!-- Script cards will be generated here -->
-                </div>
-            </div>
-        </main>
+        <!-- Scripts Grid -->
+        <div class="scripts-grid" id="scriptsGrid">
+            <!-- Script cards will be generated here -->
+        </div>
     </div>
 
     <!-- Toast Notification -->

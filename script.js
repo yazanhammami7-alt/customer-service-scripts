@@ -4,102 +4,129 @@ let currentFilter = 'all';
 let showFavoritesOnly = false;
 let copiedCount = 0;
 
-// Sample scripts with professional content
+// Sample scripts
 let scripts = [
+    // 4 - Hold Scripts
     {
         id: 1,
-        title: 'Professional Greeting',
-        category: 'customer-service',
-        text: 'Hello! Thank you for contacting us. My name is [Your Name]. How can I assist you today?',
-        description: 'Professional greeting to start the conversation',
+        title: 'Hold Script 1',
+        category: 'hold',
+        text: '',
+        description: 'Hold script 1',
         favorite: false
     },
     {
         id: 2,
-        title: 'Customer Assurance',
-        category: 'customer-service',
-        text: 'I understand your concern. Don\'t worry, I\'m here to help you resolve this issue. We will get this sorted out for you.',
-        description: 'Show empathy and reassure the customer',
+        title: 'Hold Script 2',
+        category: 'hold',
+        text: '',
+        description: 'Hold script 2',
         favorite: false
     },
     {
         id: 3,
-        title: 'Professional Apology',
-        category: 'customer-service',
-        text: 'I sincerely apologize for the inconvenience this has caused you. We take your feedback seriously and will ensure this doesn\'t happen again.',
-        description: 'Apologize professionally and take responsibility',
+        title: 'Hold Script 3',
+        category: 'hold',
+        text: '',
+        description: 'Hold script 3',
         favorite: false
     },
     {
         id: 4,
-        title: 'Active Listening',
-        category: 'customer-service',
-        text: 'Let me make sure I understand your situation correctly: [Summarize the issue]. Is that an accurate summary of what you\'re experiencing?',
-        description: 'Confirm you understand the customer\'s problem',
+        title: 'Hold Script 4',
+        category: 'hold',
+        text: '',
+        description: 'Hold script 4',
         favorite: false
     },
+    // 5 - Information Scripts
     {
         id: 5,
-        title: 'Solution Offering',
-        category: 'customer-service',
-        text: 'Here\'s what I can do to help you: [Provide solution]. I believe this will resolve your issue effectively. Would this work for you?',
-        description: 'Offer clear and professional solutions',
+        title: 'Information Script 1',
+        category: 'information',
+        text: '',
+        description: 'Information script 1',
         favorite: false
     },
     {
         id: 6,
-        title: 'Professional Closing',
-        category: 'customer-service',
-        text: 'Thank you so much for giving us the opportunity to help. Is there anything else I can assist you with today?',
-        description: 'Professional closing statement',
+        title: 'Information Script 2',
+        category: 'information',
+        text: '',
+        description: 'Information script 2',
         favorite: false
     },
     {
         id: 7,
-        title: 'Escalation Notice',
-        category: 'customer-service',
-        text: 'I understand this is urgent. Let me transfer you to a specialist who has expertise in this area. They\'ll be able to provide you with the best support.',
-        description: 'How to escalate to a specialist professionally',
+        title: 'Information Script 3',
+        category: 'information',
+        text: '',
+        description: 'Information script 3',
         favorite: false
     },
     {
         id: 8,
-        title: 'Refund Processing',
-        category: 'sales',
-        text: 'I can help you with that refund. For your protection, let me verify your account details. Can you please provide your order number?',
-        description: 'Handle refund requests securely and professionally',
+        title: 'Information Script 4',
+        category: 'information',
+        text: '',
+        description: 'Information script 4',
         favorite: false
     },
     {
         id: 9,
-        title: 'Hold Request',
-        category: 'customer-service',
-        text: 'Of course, I\'ll be happy to put you on a brief hold while I gather that information for you. Thank you for your patience.',
-        description: 'How to politely request to put customer on hold',
+        title: 'Information Script 5',
+        category: 'information',
+        text: '',
+        description: 'Information script 5',
         favorite: false
     },
+    // 6 - Before Ending Scripts
     {
         id: 10,
-        title: 'Callback Offer',
-        category: 'customer-service',
-        text: 'I have your information. We\'ll call you back within [time frame] with an update. Is the best number to reach you [phone number]?',
-        description: 'Offer to call back instead of long wait',
+        title: 'Before Ending Script 1',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 1',
         favorite: false
     },
     {
         id: 11,
-        title: 'Complaint Resolution',
-        category: 'support',
-        text: 'I\'m truly sorry you had that experience. Your feedback is valuable to us and helps us improve. What can I do to make this right for you?',
-        description: 'Respond to complaints with care and professionalism',
+        title: 'Before Ending Script 2',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 2',
         favorite: false
     },
     {
         id: 12,
-        title: 'Follow-up Message',
-        category: 'support',
-        text: 'Following up on our conversation about [issue]. Have you been able to resolve this? If you need any further assistance, please don\'t hesitate to reach out.',
-        description: 'Professional follow-up message',
+        title: 'Before Ending Script 3',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 3',
+        favorite: false
+    },
+    {
+        id: 13,
+        title: 'Before Ending Script 4',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 4',
+        favorite: false
+    },
+    {
+        id: 14,
+        title: 'Before Ending Script 5',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 5',
+        favorite: false
+    },
+    {
+        id: 15,
+        title: 'Before Ending Script 6',
+        category: 'ending',
+        text: '',
+        description: 'Before ending script 6',
         favorite: false
     }
 ];
@@ -193,9 +220,9 @@ function editScript(id) {
             <div class="form-group">
                 <label>Category</label>
                 <select id="editCategory">
-                    <option value="customer-service" ${script.category === 'customer-service' ? 'selected' : ''}>Customer Service</option>
-                    <option value="sales" ${script.category === 'sales' ? 'selected' : ''}>Sales</option>
-                    <option value="support" ${script.category === 'support' ? 'selected' : ''}>Support</option>
+                    <option value="hold" ${script.category === 'hold' ? 'selected' : ''}>Hold</option>
+                    <option value="information" ${script.category === 'information' ? 'selected' : ''}>Information</option>
+                    <option value="ending" ${script.category === 'ending' ? 'selected' : ''}>Before Ending</option>
                 </select>
             </div>
             <div class="form-group">
@@ -248,9 +275,9 @@ function addNewScript() {
             <div class="form-group">
                 <label>Category</label>
                 <select id="newCategory">
-                    <option value="customer-service">Customer Service</option>
-                    <option value="sales">Sales</option>
-                    <option value="support">Support</option>
+                    <option value="hold">Hold</option>
+                    <option value="information">Information</option>
+                    <option value="ending">Before Ending</option>
                 </select>
             </div>
             <div class="form-group">

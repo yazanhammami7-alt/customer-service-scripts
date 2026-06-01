@@ -6,9 +6,36 @@ let copiedCount = 0;
 
 // Sample scripts
 let scripts = [
-    // 4 - Hold Scripts
+    // 1 - Greeting Scripts
     {
         id: 1,
+        title: 'Greeting Script 1',
+        category: 'greeting',
+        text: '',
+        description: 'Greeting script 1',
+        favorite: false
+    },
+    // 2 - Assurance Scripts
+    {
+        id: 2,
+        title: 'Assurance Script 1',
+        category: 'assurance',
+        text: '',
+        description: 'Assurance script 1',
+        favorite: false
+    },
+    // 3 - Apology Scripts
+    {
+        id: 3,
+        title: 'Apology Script 1',
+        category: 'apology',
+        text: '',
+        description: 'Apology script 1',
+        favorite: false
+    },
+    // 4 - Hold Scripts
+    {
+        id: 4,
         title: 'Hold Script 1',
         category: 'hold',
         text: '',
@@ -16,7 +43,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 2,
+        id: 5,
         title: 'Hold Script 2',
         category: 'hold',
         text: '',
@@ -24,7 +51,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 3,
+        id: 6,
         title: 'Hold Script 3',
         category: 'hold',
         text: '',
@@ -32,7 +59,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 4,
+        id: 7,
         title: 'Hold Script 4',
         category: 'hold',
         text: '',
@@ -41,7 +68,7 @@ let scripts = [
     },
     // 5 - Information Scripts
     {
-        id: 5,
+        id: 8,
         title: 'Information Script 1',
         category: 'information',
         text: '',
@@ -49,7 +76,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 6,
+        id: 9,
         title: 'Information Script 2',
         category: 'information',
         text: '',
@@ -57,7 +84,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 7,
+        id: 10,
         title: 'Information Script 3',
         category: 'information',
         text: '',
@@ -65,7 +92,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 8,
+        id: 11,
         title: 'Information Script 4',
         category: 'information',
         text: '',
@@ -73,7 +100,7 @@ let scripts = [
         favorite: false
     },
     {
-        id: 9,
+        id: 12,
         title: 'Information Script 5',
         category: 'information',
         text: '',
@@ -82,51 +109,76 @@ let scripts = [
     },
     // 6 - Before Ending Scripts
     {
-        id: 10,
+        id: 13,
         title: 'Before Ending Script 1',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 1',
         favorite: false
     },
     {
-        id: 11,
+        id: 14,
         title: 'Before Ending Script 2',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 2',
         favorite: false
     },
     {
-        id: 12,
+        id: 15,
         title: 'Before Ending Script 3',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 3',
         favorite: false
     },
     {
-        id: 13,
+        id: 16,
         title: 'Before Ending Script 4',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 4',
         favorite: false
     },
     {
-        id: 14,
+        id: 17,
         title: 'Before Ending Script 5',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 5',
         favorite: false
     },
     {
-        id: 15,
+        id: 18,
         title: 'Before Ending Script 6',
-        category: 'ending',
+        category: 'before-ending',
         text: '',
         description: 'Before ending script 6',
+        favorite: false
+    },
+    // 7 - Ending Scripts
+    {
+        id: 19,
+        title: 'Ending Script 1',
+        category: 'ending',
+        text: '',
+        description: 'Ending script 1',
+        favorite: false
+    },
+    {
+        id: 20,
+        title: 'Ending Script 2',
+        category: 'ending',
+        text: '',
+        description: 'Ending script 2',
+        favorite: false
+    },
+    {
+        id: 21,
+        title: 'Ending Script 3',
+        category: 'ending',
+        text: '',
+        description: 'Ending script 3',
         favorite: false
     }
 ];
@@ -220,9 +272,13 @@ function editScript(id) {
             <div class="form-group">
                 <label>Category</label>
                 <select id="editCategory">
+                    <option value="greeting" ${script.category === 'greeting' ? 'selected' : ''}>Greeting</option>
+                    <option value="assurance" ${script.category === 'assurance' ? 'selected' : ''}>Assurance</option>
+                    <option value="apology" ${script.category === 'apology' ? 'selected' : ''}>Apology</option>
                     <option value="hold" ${script.category === 'hold' ? 'selected' : ''}>Hold</option>
                     <option value="information" ${script.category === 'information' ? 'selected' : ''}>Information</option>
-                    <option value="ending" ${script.category === 'ending' ? 'selected' : ''}>Before Ending</option>
+                    <option value="before-ending" ${script.category === 'before-ending' ? 'selected' : ''}>Before Ending</option>
+                    <option value="ending" ${script.category === 'ending' ? 'selected' : ''}>Ending</option>
                 </select>
             </div>
             <div class="form-group">
@@ -275,9 +331,13 @@ function addNewScript() {
             <div class="form-group">
                 <label>Category</label>
                 <select id="newCategory">
+                    <option value="greeting">Greeting</option>
+                    <option value="assurance">Assurance</option>
+                    <option value="apology">Apology</option>
                     <option value="hold">Hold</option>
                     <option value="information">Information</option>
-                    <option value="ending">Before Ending</option>
+                    <option value="before-ending">Before Ending</option>
+                    <option value="ending">Ending</option>
                 </select>
             </div>
             <div class="form-group">
@@ -324,26 +384,10 @@ function saveNewScript(id) {
     showToast('✓ New script created!');
 }
 
-// Filter by category
-function filterByCategory(category) {
-    currentFilter = category;
-    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.closest('.nav-btn').classList.add('active');
-    filterScripts();
-}
-
 // Filter scripts
 function filterScripts() {
     let filtered = allScripts;
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-
-    if (currentFilter !== 'all') {
-        filtered = filtered.filter(s => s.category === currentFilter);
-    }
-
-    if (showFavoritesOnly) {
-        filtered = filtered.filter(s => s.favorite);
-    }
 
     if (searchTerm) {
         filtered = filtered.filter(s =>
@@ -365,18 +409,6 @@ function toggleFavorite(id) {
         filterScripts();
         updateStats();
     }
-}
-
-// Toggle favorites view
-function toggleFavorites() {
-    showFavoritesOnly = !showFavoritesOnly;
-    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    if (showFavoritesOnly) {
-        event.target.closest('.nav-btn').classList.add('active');
-    } else {
-        document.querySelector('.nav-btn').classList.add('active');
-    }
-    filterScripts();
 }
 
 // Export scripts
@@ -404,7 +436,6 @@ function showToast(message) {
 // Update stats
 function updateStats() {
     document.getElementById('totalScripts').textContent = allScripts.length;
-    document.getElementById('favoritesCount').textContent = allScripts.filter(s => s.favorite).length;
     document.getElementById('copiedCount').textContent = copiedCount;
 }
 
